@@ -1,0 +1,18 @@
+{
+    "singleQuote": true,
+    "printWidth": 100,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "tabWidth": 4,
+    "semi": true,
+    "endOfLine": "lf",
+    "arrowParens": "avoid",
+    "overrides": [
+        {
+            "files": "*.handlebars",
+            "options": {
+                "parser": "html"
+            }
+        }
+    ]
+}

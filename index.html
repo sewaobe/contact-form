@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Frontend Mentor | Contact form</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="formLogin">
+                <form action="" method="POST" id="form">
+                    <h2 class="title">Contact Us</h2>
+
+                    <div class="nameUser">
+                        <div class="firstName">
+                            <label for="firstName">First Name *</label>
+                            <br />
+                            <input id="firstName" name="firstName" type="text" rules="required" />
+                            <p class="validMessage">
+                                <!-- This field is required -->
+                            </p>
+                        </div>
+
+                        <div class="lastName">
+                            <label for="lastName">Last Name *</label>
+                            <br />
+
+                            <input id="lastName" name="lastName" type="text" rules="required" />
+                            <p class="validMessage">
+                                <!-- This field is required -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="emailUser">
+                        <label for="email">Email Address *</label>
+                        <br />
+
+                        <input id="email" name="email" type="email" rules="required|email" />
+                        <p class="validMessage">
+                            <!-- Please enter a valid email address -->
+                        </p>
+                    </div>
+
+                    <div class="queryTypeUser">
+                        <label>Query Type *</label>
+                        <div class="typeQuery">
+                            <div class="generalEnquiry">
+                                <input
+                                    name="typeQuery"
+                                    id="generalEnquiry"
+                                    value="generalEnquiry"
+                                    type="radio"
+                                    rules="required"
+                                />
+                                <label for="generalEnquiry">General Enquiry</label>
+                            </div>
+                            <div class="supportRequest">
+                                <input
+                                    name="typeQuery"
+                                    id="supportRequest"
+                                    value="supportRequest"
+                                    type="radio"
+                                    rules="required"
+                                />
+                                <label for="supportRequest">Support Request</label>
+                            </div>
+                        </div>
+                        <p class="validMessage">
+                            <!-- Please select a query type -->
+                        </p>
+                    </div>
+
+                    <div class="messageUser">
+                        <label>Message *</label>
+                        <br />
+
+                        <input id="message" name="message" type="text" rules="required" />
+                        <p class="validMessage">
+                            <!-- This field is required -->
+                        </p>
+                    </div>
+
+                    <div class="checkedUser">
+                        <div class="checkedUser__checked">
+                            <input
+                                id="checked"
+                                name="checkedUser"
+                                value="contacted"
+                                type="checkbox"
+                                rules="required"
+                            />
+                            <label for="checked">I consent to being contacted by the team *</label>
+                        </div>
+                        <p class="validMessage">
+                            <!-- To submit this form, please consent to being
+                            contacted -->
+                        </p>
+                    </div>
+                    <button class="btnSubmit">Submit</button>
+                </form>
+            </div>
+            <div id="toastMessage"></div>
+        </div>
+
+        <script src="./index.js"></script>
+        <script>
+            var formValid = new Validator('#form', {
+                errorElement: '.validMessage',
+            });
+
+            formValid.onSubmit = data => {
+                console.log(data);
+            };
+        </script>
+    </body>
+</html>
